@@ -1,0 +1,5 @@
+<div>
+  <div *ngFor="let component of view.components">
+    <app-dynamic-ui-component [component]="component" [data]="view.data"></app-dynamic-ui-component>
+  </div>
+</div>

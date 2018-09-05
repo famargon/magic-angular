@@ -1,0 +1,19 @@
+<div>
+    <form [formGroup]="form">
+  
+      <div *ngFor="let question of component.fields" class="form-row">
+        <app-question [question]="question" [form]="form"></app-question>
+      </div>
+  
+      <div class="form-row">
+        <button (click)="onSubmit()" [disabled]="!form.valid">Save</button>
+        <button (click)="onCancel()" >Cancel</button>
+      </div>
+    </form>
+  
+    <div *ngIf="payLoad" class="form-row">
+      <strong>Saved the following values</strong><br>{{payLoad}}
+    </div>
+
+
+</div>

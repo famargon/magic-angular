@@ -1,0 +1,19 @@
+<div [ngSwitch]="component.type">
+
+    <ul *ngSwitchCase="'list'">
+      <li *ngFor="let item of data" >
+          <app-dynamic-ui-component [component]="component.row" [data]="item"></app-dynamic-ui-component>
+      </li>
+    </ul>
+  
+    <div *ngSwitchCase="'text'">
+      <div [ngClass]="component.style">
+        {{data[component.model]}}
+      </div>
+    </div>
+
+    <button *ngSwitchCase="'button'" (click)="callLink(component.link)" >{{component.label}}</button>
+  
+    <app-dynamic-form *ngSwitchCase="'form'" [component]="component"></app-dynamic-form>
+
+  </div>
